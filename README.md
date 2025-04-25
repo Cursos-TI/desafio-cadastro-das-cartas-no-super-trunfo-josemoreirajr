@@ -1,94 +1,102 @@
-# Desafio Super Trunfo - Países - Cadastro das Cartas - Atualizado: 21/02
+# Desafio Super Trunfo - Países - Batalha das Cartas - Atualizado: 25/04
 
 Bem-vindo ao desafio "Super Trunfo - Países"! No jogo Super Trunfo, os jogadores comparam os atributos das cartas para determinar a mais forte. O tema deste Super Trunfo é "Países", onde você comparará os atributos das cidades.
 
-A empresa MateCheck contratou você para desenvolver a parte inicial do jogo, que consiste no cadastro das cartas.
+Este programa em C permite comparar duas cartas de países com base em diferentes atributos, como população, área, PIB, número de pontos turísticos e densidade demográfica.
+Pré-requisitos
+•	Compilador C: Você precisará de um compilador C instalado em seu sistema (por exemplo, GCC).
+Como Compilar
+1.	Salve o código: Salve o código fonte em um arquivo com a extensão .c (por exemplo, cartas.c).
+2.	Abra o terminal ou prompt de comando: Navegue até o diretório onde você salvou o arquivo cartas.c.
+3.	Compile o programa: Utilize o seguinte comando no terminal para compilar o código usando o GCC:
+Bash
+gcc cartas.c -o cartas
+Este comando irá gerar um arquivo executável chamado cartas (ou cartas.exe no Windows).
+Como Executar
+1.	Navegue até o diretório (se necessário): Certifique-se de estar no diretório onde o arquivo executável cartas foi criado.
+2.	Execute o programa: 
+o	Linux/macOS: Execute o programa com o seguinte comando:
+Bash
+./cartas
+o	Windows: Execute o programa com o seguinte comando:
+Bash
+cartas.exe
+Instruções de Uso
+Ao executar o programa, você seguirá os seguintes passos:
+1.	Inserir Dados da Carta 1: O programa solicitará que você insira os dados da primeira carta de país, incluindo:
+o	Sigla do Estado (ex: CE)
+o	Código da carta (ex: A01)
+o	Nome da Cidade (ex: Fortaleza)
+o	População (número inteiro)
+o	Área (em km², número decimal)
+o	PIB (em bilhões de reais, número decimal)
+o	Número de Pontos Turísticos (número inteiro)
+Siga as instruções e pressione Enter após cada entrada.
+2.	Inserir Dados da Carta 2: Em seguida, o programa solicitará as mesmas informações para a segunda carta de país.
+3.	Escolher Atributos para Comparação: Um menu será exibido com os atributos disponíveis para comparação:
+4.	Escolha o PRIMEIRO atributo para comparar as cartas:
+5.	1 - População
+6.	2 - Área
+7.	3 - PIB
+8.	4 - Número de Pontos Turísticos
+9.	5 - Densidade Demográfica
+10.	0 - Sair
+11.	Digite sua escolha:
+Digite o número correspondente ao atributo que você deseja usar para a primeira comparação e pressione Enter.
+12.	Escolher o Segundo Atributo: Um segundo menu dinâmico será exibido, listando os atributos disponíveis para a segunda comparação (o atributo já escolhido não estará presente):
+13.	Escolha o SEGUNDO atributo para comparar as cartas:
+14.	1 - População
+15.	2 - Área
+16.	3 - PIB
+17.	4 - Número de Pontos Turísticos
+18.	5 - Densidade Demográfica
+19.	0 - Sair
+20.	Digite sua segunda escolha:
+Selecione o número do segundo atributo e pressione Enter.
+21.	Visualizar Resultados: O programa exibirá os resultados da comparação para cada um dos dois atributos escolhidos, mostrando os valores de cada carta e indicando qual carta venceu (ou se houve empate) em cada atributo. Além disso, será apresentada a soma das pontuações dos resultados individuais para determinar um vencedor geral da rodada.
+22.	Repetir ou Sair: Após exibir os resultados, o menu para escolher o primeiro atributo será mostrado novamente, permitindo que você realize outra comparação com diferentes atributos ou digite 0 para sair do programa.
+Atributos Disponíveis para Comparação
+Os seguintes atributos podem ser usados para comparar as cartas:
+1.	População: Número de habitantes da cidade. A carta com maior população vence.
+2.	Área: Extensão territorial da cidade em quilômetros quadrados (km²). A carta com maior área vence.
+3.	PIB: Produto Interno Bruto da cidade em bilhões de reais. A carta com maior PIB vence.
+4.	Número de Pontos Turísticos: Quantidade de atrações turísticas na cidade. A carta com mais pontos turísticos vence.
+5.	Densidade Demográfica: Número de habitantes por quilômetro quadrado (hab/km²). A carta com menor densidade demográfica vence.
+Exemplos de Uso dos Menus
+Exemplo 1: Comparando População e PIB
+Escolha o PRIMEIRO atributo para comparar as cartas:
+1 - População
+2 - Área
+3 - PIB
+4 - Número de Pontos Turísticos
+5 - Densidade Demográfica
+0 - Sair
+Digite sua escolha: 1
 
-O desafio está dividido em três níveis: Novato, Aventureiro e Mestre, com cada nível adicionando mais complexidade ao anterior.  **Você deve escolher qual desafio quer realizar.**
+Escolha o SEGUNDO atributo para comparar as cartas:
+2 - Área
+3 - PIB
+4 - Número de Pontos Turísticos
+5 - Densidade Demográfica
+0 - Sair
+Digite sua segunda escolha: 3
+Neste exemplo, o usuário escolheu comparar as cartas primeiro pela População e depois pelo PIB.
+Exemplo 2: Comparando Área e Densidade Demográfica
+Escolha o PRIMEIRO atributo para comparar as cartas:
+1 - População
+2 - Área
+3 - PIB
+4 - Número de Pontos Turísticos
+5 - Densidade Demográfica
+0 - Sair
+Digite sua escolha: 2
 
-🚨 **Atenção:** O nível Novato do desafio é focado apenas no cadastro das cartas, utilizando as funções `scanf` para ler os dados e `printf` para exibi-los.
-
-## 🎮 Nível Novato: Cadastro Básico
-
-No nível Novato, você iniciará criando o sistema básico do jogo Super Trunfo com o tema "Países". As cartas serão divididas por estados, cada um com quatro cidades.  Imagine um país dividido em oito estados (A a H), e cada estado com quatro cidades (1 a 4).  A combinação forma o código da carta (ex: A01, B02).
-
-🚩 **Objetivo:** Criar um programa em C que cadastra **duas** cartas com os seguintes atributos:
-
-*   População (`int`)
-*   Área (`float`)
-*   PIB (`float`)
-*   Número de pontos turísticos (`int`)
-
-⚙️ **Funcionalidades do Sistema:**
-
-*   O sistema permitirá ao usuário cadastrar os dados de **duas** cartas manualmente via terminal.
-*   Após o cadastro, o sistema exibirá os dados de cada cidade de forma organizada.
-
-📥 **Entrada** e 📤 **Saída de Dados:**
-
-*   O usuário insere os dados de cada carta interativamente via `scanf`.
-*   O programa exibe os dados cadastrados usando `printf`, com cada atributo em uma nova linha.
-
-**Simplificações para o Nível Novato:**
-
-*   Cadastre apenas **duas** cartas.
-*   Concentre-se na leitura, armazenamento e exibição. Não implemente comparações ou outros recursos.
-*   **Não use** laços (`for`, `while`) ou condicionais (`if`, `else`).
-
-
-## 🛡️ Nível Aventureiro: Cálculo de Atributos
-
-No nível Aventureiro, você expandirá o sistema para incluir o cálculo de dois novos atributos: Densidade Populacional e PIB per Capita.
-
-🆕 **Diferença em relação ao Nível Novato:**
-
-*   **Novos Atributos:**
-    *   Densidade Populacional: População / Área (`float`)
-    *   PIB per Capita: PIB / População (`float`)
-
-⚙️ **Funcionalidades do Sistema:**
-
-*   O sistema calculará automaticamente a Densidade Populacional e o PIB per Capita.
-*   Os novos atributos serão exibidos junto com os demais.
-
-📥 **Entrada** e 📤 **Saída de Dados:**
-
-*   Mesma entrada do nível Novato.
-*   A saída exibirá também os atributos calculados.
-
-**Simplificações para o Nível Intermediário:**
-
-*   Continue cadastrando apenas **duas** cartas.
-*   Continue **sem usar** laços (`for`, `while`) ou condicionais (`if`, `else`).
-
-
-
-## 🏆 Nível Mestre: Comparação e Super Poder
-
-No nível Mestre, você implementará a comparação entre duas cartas e o cálculo do "Super Poder".
-
-🆕 **Diferença em relação ao Nível Aventureiro:**
-
-*   **Comparação de Cartas:** O usuário poderá comparar as duas cartas.
-*   **Super Poder:** Soma de todos os atributos (inclusive os calculados), com a densidade populacional *invertida* antes da soma (1/densidade).  Tipo: `float`.
-
-⚙️ **Funcionalidades do Sistema:**
-
-*   Comparação atributo a atributo, mostrando qual carta venceu (1 se a Carta 1 vence, 0 se a Carta 2 vence).
-*   Para Densidade Populacional, vence a carta com o *menor* valor.
-*   Para os demais atributos (e o Super Poder), vence a carta com o *maior* valor.
-
-📥 **Entrada** e 📤 **Saída de Dados:**
-
-*   Mesma entrada dos níveis anteriores, mas a População agora é `unsigned long int`.
-*   A saída mostrará o resultado da comparação para cada atributo e o Super Poder.
-
-**Observação:**  Preste atenção à conversão de tipos ao calcular o Super Poder!
-
-
-## 🏁 Conclusão
-
-Ao concluir qualquer um dos níveis, você terá dado um passo importante no desenvolvimento do Super Trunfo - Países. Boa sorte e divirta-se programando!
-
-Equipe de Ensino - MateCheck
-content_copy
+Escolha o SEGUNDO atributo para comparar as cartas:
+1 - População
+3 - PIB
+4 - Número de Pontos Turísticos
+5 - Densidade Demográfica
+0 - Sair
+Digite sua segunda escolha: 5
+Aqui, a comparação será feita pela Área e pela Densidade Demográfica.
+Lembre-se de seguir as instruções do programa para inserir os dados das cartas e escolher os atributos desejados para a comparação.
