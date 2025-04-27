@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h> // Para a função exit()
 
-// Definição da estrutura para representar uma carta de país
+// Definição da estrutura para representar uma carta do país
 typedef struct {
     char estado[3];
     char codigo[5];
